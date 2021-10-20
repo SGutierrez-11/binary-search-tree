@@ -52,4 +52,23 @@ public class BST<T extends Comparable<T>> {
 	public void search(T x, T k) {
 		
 	}
+	public String inorder() {
+		
+		
+		return "";
+	}
+	public String preOrder() {
+		
+		
+		return "";
+	}
+	public String postOrder() {
+		
+		return "";
+	}
+	public Node<T> toDelete(){
+		
+		return null;
+	}
+	
 }
