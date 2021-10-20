@@ -141,9 +141,41 @@ public class BST<T extends Comparable<T>> {
 		}
 		
 	}
-	public void toDelete(){
+	public Node<T> toDelete(T value, Node<T> node){
 		
+		if(node == null) {
+			return null;
+		}
+		if((value.compareTo(node.getValue())>0)){ 
+            node.setRigth(toDelete(value, node.getRigth()));
+        }else if((value.compareTo(node.getValue())<0)){
+            node.setLeft(toDelete(value, node.getLeft()));
+        }else{
+            if(node.getLeft() == null && node.getRigth() == null){
+                node = null;
+            }else if(node.getRigth() != null){
+                node.setValue(successor(node));
+                node.setRigth(toDelete(node.getValue(), node.getRigth()));
+            }else{
+                root.setValue(predecessor(root));
+                root.setLeft(toDelete(node.getValue(), node.getLeft()));
+            }
+        }
+        return root;
 		
 	}
-	
+	private T successor(Node<T> node){
+        node = node.getRigth();
+        while(node.getLeft() != null){
+            node = root.getLeft();
+        }
+        return root.getValue();
+    }
+	private T predecessor(Node<T> node){
+        node = root.getLeft();
+        while(node.getRigth() != null){
+            node = root.getRigth();
+        }
+        return root.getValue();
+    }
 }
