@@ -135,6 +135,7 @@ public class BST<T extends Comparable<T>> {
 		}
 		
 	}
+	/*
 	public Node<T> toDelete(T value, Node<T> node){
 		
 		if(node == null) {
@@ -158,9 +159,10 @@ public class BST<T extends Comparable<T>> {
         return root;
 		
 	}
-	
-	public Node<T> delete(Node<T> node){
+	*/
+	public Node<T> delete(T value){
 		
+		Node<T> node = search(value);
 		Node<T> y;
 		Node<T> x;
 		
@@ -170,7 +172,7 @@ public class BST<T extends Comparable<T>> {
 			
 		}else {
 			
-			y = search(successor(node));
+			y = succesor(node);
 			
 		}
 		if(y.getLeft()!=null) {
@@ -195,7 +197,7 @@ public class BST<T extends Comparable<T>> {
 		return y;
 	}
 
-	
+	/*
 	private T successor(Node<T> node){
         node = node.getRigth();
         while(node.getLeft() != null){
@@ -210,6 +212,33 @@ public class BST<T extends Comparable<T>> {
         }
         return root.getValue();
     }
+    */
+	public Node<T> minimun(Node<T> x){
+		
+		while(x.getLeft()!=null) {
+			x = x.getLeft();
+		}
+		return x;
+	}
+	public Node<T> maximun(Node<T> x){
+	
+		while(x.getRigth()!=null) {
+			x = x.getRigth();
+		}
+		return x;
+	}
+	public Node<T> succesor(Node<T> x){
+		
+		if(x.getRigth()!=null) {
+			return minimun(x.getRigth());
+		}
+		Node<T> y = x.getParent();
+		while(y!=null && x==y.getRigth()) {
+			x = y;
+			y = y.getParent();
+		}
+		return y;
+	}
 	
 	public String getToPrint() {
 		return toPrint;
