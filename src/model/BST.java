@@ -5,8 +5,10 @@ public class BST<T extends Comparable<T>> {
 	
 	Node<T> root;
 	
+	String toPrint;
 	public BST() {
-
+		
+		toPrint = "";
 	}
 	
 	//inorder tree walk
@@ -85,23 +87,36 @@ public class BST<T extends Comparable<T>> {
 		}
 		
 	}
-	public String inorder() {
+	public void inOrder() {
 		
+		toPrint = "";
+		inOrder(root);
 		
-		return "";
 	}
-	public String preOrder() {
+	private void inOrder(Node<T> node) {
 		
+		if(node == null) {
+			return;
+		}else {
+			
+			inOrder(node.getLeft());
+			toPrint+= "" +node.getValue();
+			inOrder(node.getRigth());
+		}
 		
-		return "";
 	}
-	public String postOrder() {
+	public void preOrder() {
 		
-		return "";
+		
+		
 	}
-	public Node<T> toDelete(){
+	public void postOrder() {
 		
-		return null;
+	
+	}
+	public void toDelete(){
+		
+		
 	}
 	
 }
