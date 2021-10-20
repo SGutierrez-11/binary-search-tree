@@ -124,7 +124,22 @@ public class BST<T extends Comparable<T>> {
 	}
 	public void postOrder() {
 		
-	
+		toPrint = "";
+		postOrder(root);	
+	}
+	private void postOrder(Node<T> node) {
+		
+		if(node==null) {
+			return;
+		}else {
+			
+			postOrder(node.getLeft());
+			
+			postOrder(node.getRigth());
+			
+			toPrint+= "" + node.getValue();
+		}
+		
 	}
 	public void toDelete(){
 		
