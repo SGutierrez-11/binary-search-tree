@@ -1,5 +1,5 @@
 package model;
-
+//Santiago Guitierres, Esteban Mendoza y Sebastian Navia
 
 public class BST<T extends Comparable<T>> {
 	

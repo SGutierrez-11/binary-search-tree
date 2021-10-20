@@ -5,7 +5,7 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
 import org.junit.jupiter.api.Test;
-
+//Santiago Guitierres, Esteban Mendoza y Sebastian Navia
 public class BSTtest<T extends Comparable<T>> {
 	 private Node<Integer> node;
 	 private BST<Integer> tree;

@@ -5,7 +5,7 @@ import java.util.Scanner;
 import model.BST;
 
 public class Main {
-	
+	//Santiago Guitierres, Esteban Mendoza y Sebastian Navia
 	//private static BST<Integer> bst;
 
 	public static void main(String[] args) {

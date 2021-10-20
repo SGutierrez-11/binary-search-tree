@@ -1,5 +1,5 @@
 package model;
-
+//Santiago Guitierres, Esteban Mendoza y Sebastian Navia
 public class Node<T extends Comparable<T>> {
 	
 	private T value;
