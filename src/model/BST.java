@@ -158,6 +158,7 @@ public class BST<T extends Comparable<T>> {
         return root;
 		
 	}
+	
 	public Node<T> delete(Node<T> node){
 		
 		Node<T> y;
@@ -193,6 +194,8 @@ public class BST<T extends Comparable<T>> {
 		}
 		return y;
 	}
+
+	
 	private T successor(Node<T> node){
         node = node.getRigth();
         while(node.getLeft() != null){

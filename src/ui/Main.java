@@ -24,7 +24,8 @@ public class Main {
 				
 			case 2:
 				int m = sc.nextInt();
-				bst.toDelete(m, bst.getRoot());
+				//bst.toDelete(m, bst.getRoot());
+				bst.delete(bst.search(m));
 				break;
 				
 			case 3:	
