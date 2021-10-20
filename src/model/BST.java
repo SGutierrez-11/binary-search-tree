@@ -52,8 +52,10 @@ public class BST<T extends Comparable<T>> {
 	}
 	
 	public Node<T>search(T x) {
-	
-		if(x.compareTo(root.getValue())==0) {
+		
+		if(root==null) {
+			return null;
+		}else if(x.compareTo(root.getValue())==0) {
 			
 		return root;
 		}else {
