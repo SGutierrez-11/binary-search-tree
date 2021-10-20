@@ -49,7 +49,40 @@ public class BST<T extends Comparable<T>> {
 		}	
 	}
 	
-	public void search(T x, T k) {
+	public Node<T>search(T x) {
+	
+		if(x.compareTo(root.getValue())==0) {
+			
+		return root;
+		}else {
+			if(x.compareTo(root.getValue())>0) {
+				return search(x,root.getRigth());
+				
+			}else {
+				return search(x, root.getLeft());
+			}
+		}
+		
+		
+	}
+	private Node<T> search(T x, Node<T> toSearch){
+		
+		if(toSearch==null) {
+			return null;
+		}else {
+			
+			if(x.compareTo(toSearch.getValue())==0) {
+				
+				return toSearch;
+				}else {
+					if(x.compareTo(toSearch.getValue())>0) {
+						return search(x,toSearch.getRigth());
+						
+					}else {
+						return search(x, toSearch.getLeft());
+					}
+				}
+		}
 		
 	}
 	public String inorder() {
