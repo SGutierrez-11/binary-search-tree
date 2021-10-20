@@ -6,21 +6,13 @@ public class BST<T extends Comparable<T>> {
 	Node<T> root;
 	
 	String toPrint;
+	
+
 	public BST() {
 		
 		toPrint = "";
 	}
 	
-	//inorder tree walk
-	public void inorder(Node<T> x) {
-		
-		if(x != null) {
-			inorder(x.getLeft());
-			System.out.println(x.getValue());
-			inorder(x.getRigth());
-			
-		}
-	}
 	
 	public void insert(T value) {
 		
@@ -102,7 +94,7 @@ public class BST<T extends Comparable<T>> {
 		}else {
 			
 			inOrder(node.getLeft());
-			toPrint+= "" +node.getValue();
+			toPrint+= "" +node.getValue()+", ";
 			inOrder(node.getRigth());
 		}
 		
@@ -118,7 +110,7 @@ public class BST<T extends Comparable<T>> {
 		if(node==null) {
 			return;
 		}else {
-			toPrint+= "" + node.getValue();
+			toPrint+= "" + node.getValue()+", ";
 			preOrder(node.getLeft());
 			preOrder(node.getRigth());
 		}
@@ -139,7 +131,7 @@ public class BST<T extends Comparable<T>> {
 			
 			postOrder(node.getRigth());
 			
-			toPrint+= "" + node.getValue();
+			toPrint+= "" + node.getValue()+", ";
 		}
 		
 	}
@@ -180,4 +172,12 @@ public class BST<T extends Comparable<T>> {
         }
         return root.getValue();
     }
+	
+	public String getToPrint() {
+		return toPrint;
+	}
+	public Node<T> getRoot() {
+		return root;
+	}
+	
 }
